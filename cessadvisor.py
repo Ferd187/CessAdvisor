@@ -93,5 +93,7 @@ if st.session_state.show_form:
         df.to_csv('prova.csv', index=False, header = False, sep = ";", mode = 'a')
         repo.index.add(['prova.csv'])
         repo.index.commit('aggiunti dati da validare')
+        origin = repo.remote('origin')
+        origin.push()
         # Show a success message
         st.success("Nuovo cesso aggiunto, in attesa di approvazione!")
