@@ -4,7 +4,7 @@ import os
 from git import Repo
 from PIL import Image
 
-repo = Repo()
+repo = Repo('CessAdvisor/')
 st.set_page_config(
     page_title='CessAdvisor',
     page_icon = ":poop:"
