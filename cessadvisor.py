@@ -1,7 +1,10 @@
 import pandas as pd
 import streamlit as st
 import os
+from git import Repo
 from PIL import Image
+
+repo = Repo()
 st.set_page_config(
     page_title='CessAdvisor',
     page_icon = ":poop:"
@@ -88,5 +91,6 @@ if st.session_state.show_form:
         df = df.append(new_row, ignore_index=True, )
         # Write the updated DataFrame back to the CSV file
         df.to_csv(csv_path, index=False, header = False, sep = ";", mode = 'a')
+        repo.index.add(['cess_data_to_approve.csv'])
         # Show a success message
         st.success("Nuovo cesso aggiunto, in attesa di approvazione!")
