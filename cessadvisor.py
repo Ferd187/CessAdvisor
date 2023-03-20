@@ -90,8 +90,8 @@ if st.session_state.show_form:
         # Append the new row to the DataFrame
         df = df.append(new_row, ignore_index=True, )
         # Write the updated DataFrame back to the CSV file
-        df.to_csv(csv_path, index=False, header = False, sep = ";", mode = 'a')
-        repo.index.add(['cess_data_to_approve.csv'])
+        df.to_csv('prova.csv', index=False, header = False, sep = ";", mode = 'a')
+        repo.index.add(['prova.csv'])
         repo.index.commit('aggiunti dati da validare')
         # Show a success message
         st.success("Nuovo cesso aggiunto, in attesa di approvazione!")
